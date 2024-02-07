@@ -18,7 +18,7 @@
 //Username
 //Password
 
-def call(String project, String ImageTag, String hubUser){
+def call(){
     withCredentials([usernamePassword(
             credentialsId: "Artifact",
             usernameVariable: "USER",
@@ -26,6 +26,7 @@ def call(String project, String ImageTag, String hubUser){
     )]) 
     //sh "docker image push ${hubUser}/${project}:${ImageTag}"
    // sh "docker image push ${hubUser}/${project}:latest"   
-
+  {
   'sh curl -X -u ${USER} -p {PASS} -T /var/lib/jenkins/workspace/jfrog_test/target/*.jar http://3.109.184.227:8082/artifactory/example-repo-local/'
+  }
 }
