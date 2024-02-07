@@ -5,7 +5,7 @@ def call(credentialsId){
             usernameVariable: "USER",
             passwordVariable: "PASS"
     )]) {{
-      sh 'Curl -X PUT -u $USER -p $PASS -T *.jar http://3.109.184.227:8081/artifactory/example-repo-local/
+      sh 'curl -X PUT -u $USER -p $PASS -T *.jar http://3.109.184.227:8081/artifactory/example-repo-local/
     }
 }
 //Username
