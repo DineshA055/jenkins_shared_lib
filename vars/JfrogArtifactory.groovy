@@ -28,8 +28,8 @@ def call(){
   )]) 
     //sh "docker image push ${hubUser}/${project}:${ImageTag}"
    // sh "docker image push ${hubUser}/${project}:latest"   
-//  {
-//  'sh curl -X PUT -u ${USER}:${PASS} -T /var/lib/jenkins/workspace/jfrog_test/target/*.jar http://3.109.184.227:8082/artifactory/example-repo-local/'
-  //}
+  {
+    'sh curl -u '${USER}:${PASS}' -T /var/lib/jenkins/workspace/jfrog_test/target/*.jar ${params.ArtifactoryURL}/artifactory/example-repo-local/'
+  }
 
 }
