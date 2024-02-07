@@ -2,7 +2,7 @@ def call(credentialsId){
 
      withCredentials([usernamePassword(
             credentialsId: "Jfrog-api",
-            usernameVariable: "admin",
+            usernameVariable: "USER,
             passwordVariable: "PASS"
     )]) 
      {
