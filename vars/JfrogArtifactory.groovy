@@ -20,16 +20,16 @@
 //Password
 
 
-def call(){
-    withCredentials([usernamePassword(
-            credentialsId: "Artifact",
-           usernameVariable: "USER",
-            passwordVariable: "PASS"
-  )]) 
+//def call(){
+  //  withCredentials([usernamePassword(
+       //     credentialsId: "Artifact",
+       //    usernameVariable: "USER",
+       //     passwordVariable: "PASS"
+//  )]) 
     //sh "docker image push ${hubUser}/${project}:${ImageTag}"
    // sh "docker image push ${hubUser}/${project}:latest"   
-  {
-    'sh curl -u '${USER}:${PASS}' -T /var/lib/jenkins/workspace/jfrog_test/target/*.jar ${params.ArtifactoryURL}/artifactory/example-repo-local/'
-  }
+//  {
+ //   'sh curl -u '${USER}:${PASS}' -T /var/lib/jenkins/workspace/jfrog_test/target/*.jar ${params.ArtifactoryURL}/artifactory/example-repo-local/'
+ // }
 
-}
+//}
