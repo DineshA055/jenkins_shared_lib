@@ -1,7 +1,11 @@
 def call(credentialsId){
 
-    withJfrogArtifactoryEnv(credentialsId: Jfrog-api) {
-      sh 'Curl -X PUT -u $Username -p $Password -T *.jar http://3.109.184.227:8081/artifactory/example-repo-local/
+     withCredentials([usernamePassword(
+            credentialsId: "Jfrog-api",
+            usernameVariable: "USER",
+            passwordVariable: "PASS"
+    )]) {{
+      sh 'Curl -X PUT -u $USER -p $PASS -T *.jar http://3.109.184.227:8081/artifactory/example-repo-local/
     }
 }
 //Username
